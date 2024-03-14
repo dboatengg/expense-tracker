@@ -1,0 +1,65 @@
+interface Expense {
+  id: number;
+  description: string;
+  amount: number;
+  category: string;
+}
+
+interface Props {
+  expenses: Expense[];
+  onDelete: (id: number) => void;
+}
+
+const ExpenseList = ({ expenses, onDelete }: Props) => {
+  return (
+    <table className='table table-bordered'>
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Amount</th>
+          <th>Category</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {/* <tr>
+          <td>Milk</td>
+          <td>$5.00</td>
+          <td>Utilities</td>
+          <td>
+            <button className='btn btn-sm btn-danger'>Delete</button>
+          </td>
+        </tr> */}
+
+        {expenses.map((expense) => (
+          <tr key={expense.id}>
+            <td>{expense.description}</td>
+            <td>${expense.amount}</td>
+            <td>{expense.category}</td>
+            <td>
+              <button
+                className='btn btn-sm btn-danger'
+                onClick={() => onDelete(expense.id)}
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>Total</td>
+          <td>
+            $
+            {expenses
+              .reduce((acc, expense) => expense.amount + acc, 0)
+              .toFixed(2)}
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  );
+};
+
+export default ExpenseList;

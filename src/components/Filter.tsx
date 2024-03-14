@@ -16,30 +16,6 @@ const Filter = () => {
           </select>
         </div>
       </form>
-      <table className='table table-striped'>
-        <thead>
-          <tr>
-            <th scope='col'>Description</th>
-            <th scope='col'>Amount</th>
-            <th scope='col'>Category</th>
-            <th scope='col'></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Milk</td>
-            <td>$5.00</td>
-            <td>Utilities</td>
-            <td>
-              <button className='btn btn-sm btn-danger'>Delete</button>
-            </td>
-          </tr>
-          <tr>
-            <td>Total</td>
-            <td>-</td>
-          </tr>
-        </tbody>
-      </table>
     </div>
   );
 };
