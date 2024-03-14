@@ -1,4 +1,10 @@
+import { FormEvent } from 'react';
+
 const Form = () => {
+  const handleClick = (event: FormEvent) => {
+    event.preventDefault();
+  };
+
   return (
     <form className='container mt-4 mb-4'>
       <div className='mb-3'>
@@ -32,7 +38,7 @@ const Form = () => {
           <option value='mercedes'>Entertainment</option>
         </select>
       </div>
-      <button type='submit' className='btn btn-primary'>
+      <button onClick={handleClick} className='btn btn-primary'>
         Submit
       </button>
     </form>

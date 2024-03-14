@@ -34,6 +34,10 @@ const Filter = () => {
               <button className='btn btn-sm btn-danger'>Delete</button>
             </td>
           </tr>
+          <tr>
+            <td>Total</td>
+            <td>-</td>
+          </tr>
         </tbody>
       </table>
     </div>
