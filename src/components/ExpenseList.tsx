@@ -22,19 +22,10 @@ const ExpenseList = ({ expenses, onDelete }: Props) => {
         </tr>
       </thead>
       <tbody>
-        {/* <tr>
-          <td>Milk</td>
-          <td>$5.00</td>
-          <td>Utilities</td>
-          <td>
-            <button className='btn btn-sm btn-danger'>Delete</button>
-          </td>
-        </tr> */}
-
         {expenses.map((expense) => (
           <tr key={expense.id}>
             <td>{expense.description}</td>
-            <td>${expense.amount}</td>
+            <td>{expense.amount}</td>
             <td>{expense.category}</td>
             <td>
               <button
