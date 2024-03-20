@@ -27,7 +27,7 @@ function App() {
     },
   ]);
 
-  if (expenses.length === 0) return null;
+  // if (expenses.length === 0) return null;
 
   const visibleExpenses = selectedCategory
     ? expenses.filter((e) => e.category === selectedCategory)
